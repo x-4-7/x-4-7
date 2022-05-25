@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单语法</title>
+</head>
+<body>
+    <h1>注册</h1>
+<!--**************   form   ****************-->
+<!--form表单语法
+    action="" 表单提交位置，可以是一个网站，也可以是一个请求处理地址
+    method="" post,get 提交方式
+        get: 提交信息在URL中可见，不安全，高效
+        post： 比较安全，传输大文件，
+-->
+<form action="1.我的第一个网页.html" method="post" >
+
+
+<!--**************   input   ****************-->
+    <!--input标签
+        input type="text"
+        name="" 必填项，后期通过Java程序读取，就是用这个name
+        value="给个脆脆鲨" 默认值
+        maxlength="8" 最大输入值
+        size="30" 不常用，文本框长度
+    -->
+    <p>username: <input type="text" name="username" placeholder="请输入用户名"></p>
+
+    <!--type="password" 密码框元素：
+        input type="password"
+    -->
+    <p>password: <input type="password" name="password" required></p>
+
+    <!--type="radio" 单选框元素
+        input type="radio"
+        value="boy" 单选框的值，选中男，那post提交的数据就是boy
+        name="sex" 组，同组里面进行单选
+        checked 默认选中
+    -->
+    <p>性别
+        <input type="radio" value="boy" name="sex" checked/>男
+        <input type="radio" value="girl" name="sex"/>女
+    </p>
+
+    <!--type="checkbox" 多选框元素
+        input type="checkbox"
+        value="sleep"
+        name="hobby"
+        checked 默认选中
+    -->
+    <p>爱好
+        <input type="checkbox" value="sleep" name="hobby" checked>睡觉
+        <input type="checkbox" value="swim" name="hobby">游泳
+        <input type="checkbox" value="cycling" name="hobby">骑车
+        <input type="checkbox" value="travelling" name="hobby">旅游
+        <input type="checkbox" value="reading" name="hobby">读书
+    </p>
+
+    <!--按钮元素：button、image、submit、reset
+        input type="button" 普通按钮
+        input type="image"  图片按钮(也会进行数据的提交)
+        input type="submit" 提交按钮
+        input type="reset"  重置
+    -->
+
+    <!--type="button"元素：不会提交数据
+        type="button"
+        name="btn1" 按钮名
+        value="点击" 按钮上显示的文字
+    -->
+    <p>
+    <input type="button" name="btn1" value="点击">
+    </p>
+
+
+    <!--type="image"元素：图片按钮是可以提交数据的，和submit按钮类似
+        type="image"
+        src="../resources/image/1.bmp" 图片路径
+    -->
+    <p>
+    <input type="image" src="../resources/image/1.bmp" width="100" name="picture">
+    </p>
+    <p>
+        <input type="submit" name="Button" value="提交"/>
+        <input type="reset" name="Button" value="重填"/>
+    </p>
+    <!--type="file"元素，文件域
+        type="file"
+        name="files" input标签下元素的必填项，提交数据都是以键值对的方式，所以每个提交项都要有name
+        一般和file元素搭配的还会有一个上传的button元素
+    -->
+    <p>
+        <input type="file" name="files">
+        <input type="button" value="上传文件" name="upload">
+    </p>
+
+<!--**** input标签下一些带验证功能的元素email和url，但是自带的验证效果不好，还是推荐使用pattern=“”正则表达式进行验证 ******-->
+    <!--type="email"邮件验证
+        name
+    -->
+    <p>邮箱：
+        <input type="email" name="email">
+    </p>
+
+    <!--type="url" url地址验证
+        name
+    -->
+    <p>URL：
+        <input type="url" name="url">
+    </p>
+
+    <!--type="number" 数字验证
+        name="num"
+        max="100" 最大值
+        min="0" 最小值
+        step="10" 步长
+    -->
+    <p>
+        <input type="number" name="num" max="100" min="0" step="10">
+    </p>
+
+    <!--滑块
+        input type="range"
+    -->
+    <p>滑块
+        <input type="range" name="voice" max="100" min="0" step="2">
+    </p>
+
+    <!--搜索框
+        input type="search"
+    -->
+    <p>搜索：
+        <input type="search" name="search">
+    </p>
+
+    <!--pattern正则表达式
+        常用正则表达式链接==》https://www.jb51.net/article/76901.htm
+    -->
+    <p>自定义邮箱：
+        <input type="text" name="DIY_Mail" pattern="">
+    </p>
+
+<!--**************   select下拉框   ****************-->
+    <!--select下拉框，列表框元素
+        name 列表名称
+        option 选项标签
+            value 选项的值，真正被传递的值
+            selected 默认选中
+    -->
+    <select name="列表名称" id="country">
+        <option value="China" selected>中国</option>
+        <option value="USA">美国</option>
+        <option value="Switzerland">瑞士</option>
+        <option value="India">印度</option>
+    </select>
+
+
+
+<!--**************   textarea文本框   ****************-->
+    <!--textarea文本框标签
+        name 文本框名称
+        cols 列
+        raws 行
+    -->
+    <p>反馈 <br/>
+        <textarea name="textarea" id="" cols="10" rows="10" placeholder="信息"></textarea>
+    </p>
+
+    <!--label标签 增强鼠标可用性，可以锁定到一个位置
+            for="" 标记名，和input的id属性相关联
+    -->
+    <p>
+        <label for="mark">你点我试试</label>
+        <input type="text" id="mark">
+    </p>
+</form>
+
+</body>
+</html>

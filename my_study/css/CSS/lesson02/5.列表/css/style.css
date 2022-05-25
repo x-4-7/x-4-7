@@ -1,0 +1,47 @@
+/*养成规范，从上到下写*/
+/*可以通过网页版审查元素，在300px上滚动鼠标滚轮找到合适的大小*/
+#nav{
+    width: 300px;
+    /*把这个块级元素的背景颜色改成
+    和ul li的颜色一样就可以伪装成没有空隙，
+    这只是盗版做法，真正我们并不会这么做*/
+    background: aliceblue;
+}
+
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 2em;
+    line-height: 35px;
+    /*颜色 图片 图片位置：左右 上下 平铺方式*/
+    background: red url("../images/down.PNG") 259px 1px no-repeat;
+}
+/*ul li*/
+/*
+list-style:
+    none 去掉圆点
+    circle 空心
+    decimal 数字
+    square 正方形
+*/
+ul{
+    background: aliceblue;
+}
+ul li{
+    height: 30px;
+    list-style: none;
+    text-indent: 1em;
+    background-image: url("../images/right.PNG");
+    background-repeat: no-repeat;
+    background-position: 214px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+a:hover{
+    color: orange;
+    text-decoration: underline;
+}
