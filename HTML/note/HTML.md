@@ -84,23 +84,68 @@ Apply>Ok
 
 ## 网页基本标签
 
-[2.基本标签](http://localhost:63342/HTML/html/2.%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE.html?_ijt=gl5quq0n2aemeqp8pr21p0uu6i&_ij_reload=RELOAD_ON_SAVE)
-
 ### 注释标签
+
+```html
+<!--我是注释-->
+```
 
 ### 标题标签
 
+```html
+<!--标题标签-->
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6>
+```
+
 ### 段落标签
 
+```html
+<!--段落标签-->
+<p>段落标签</p>
+```
+
 ### 换行标签水平线标签
+
+```html
+<!--换行标签-->
+换行标签<br/>
+
+<!--水平线标签-->
+水平线标签<hr/>
+```
 
 ### 字体样式标签
 
 粗体、斜体
 
+```html
+<!--粗体 斜体-->
+<h1>字体样式标签</h1>
+粗体：<strong>粗体</strong>
+斜体：<em>斜体</em>
+```
+
 ### 特殊符号标签
 
 空格、版权等
+
+```html
+<!--特殊符号  
+	&     ；-->
+空   格：
+空&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格
+<br/>
+&gt;
+<br/>
+&lt;
+<br/>
+&copy;版权所有脆脆鲨
+```
 
 ## 图像标签
 
@@ -110,14 +155,18 @@ Apply>Ok
 
 ```html
 <img src="path" alt="text" />
-<!--
-必填项：
-	path=""图像位置路径
-    alt=""加载失败的替代文字
-常用选填项：
- 	title=""悬停文字
-    width=""宽度
-    height=""高度 
+<!--img
+一般都新建一个总的 resources 目录，再分别为图像、视频、音频等文件分别创建对应的目录
+src=“” -- （必填）
+    相对路径（推荐使用）；绝对路径
+    ../  --上级目录
+alt=“” -- （必填）
+    图像因路径、网络等原因加载不出来时的 替代文字 --一般是对图像的简单描述
+title=""
+    悬停文字
+width=“”
+    图像宽度
+更多选项 在后面空格可以直接调用
 -->
 ```
 
@@ -125,17 +174,79 @@ Apply>Ok
 
 ```html
 <a href="">
-<!--
-必填项：
-	href=""链接地址
-常用选填项：
-	target=""表示窗口在哪里打开
-    	target="_blank" 在新标签中打开
-    	target="_self" 在当前窗口打开
-    	target="_parent" 在上级窗口打开
- -->
+    
+<!--使用name或id作为标记-->
+<a name="top" href="">顶部</a>
 
 
+<!--a标签  （快捷键 a+Tab）
+href="":(必填)，表示要跳转到哪个页面
+    	链接路径
+target="":表示窗口在哪里打开
+        _blank 在新标签中打开
+        _self 默认，在当前标签打开
+
+-->
+<a href="1.我的第一个网页.html" target="_blank">点击我跳转到页面一</a>
+<!--ctrl+D 快捷键，复制到下一行-->
+<a href="https://www.baidu.com">点击我跳转到百度</a>
+
+<br/>
+
+<a href="1.我的第一个网页.html">
+    <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+</a>
+
+<p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p>
+<p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p><p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p><p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p><p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p><p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p><p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p><p>
+    <a href="1.我的第一个网页.html">
+        <img src="../resources/image/1.bmp" alt="女儿" title="神乐" width="100">
+    </a>
+</p>
+
+<!--锚链接
+    1.需要一个标记，一般用name属性作为标记：
+    2.跳转到标记
+    #
+-->
+
+<a href="#top">回到顶部</a>
+<a name="down"></a>
+
+
+<!--功能性标签
+    邮件链接：mailto：
+    qq链接：腾讯做的，QQ推广
+-->
+<a href="mailto:123456789@qq.com">点击联系我</a>
 ```
 
 ## 补充：块元素和行内元素
@@ -158,12 +269,56 @@ Apply>Ok
 
 ​	标题:dt 内容:dd
 
+```html
+<!--有序列表-->
+<ol>
+    <li>Java</li>
+    <li>Python</li>
+    <li>C++</li>
+    <li>运维</li>
+    <li>前端</li>
+</ol>
+<hr/>
+
+<!--无序列表
+    应用范围：导航、侧边栏
+-->
+<ul>
+    <li>Java</li>
+    <li>Python</li>
+    <li>C++</li>
+    <li>运维</li>
+    <li>前端</li>
+</ul>
+
+
+<!--自定义列表
+    dt:列表标题
+    dd:列表内容
+    应用范围：公司网站底部
+-->
+<dl>
+    <dt>学科</dt>
+    <dd>Python</dd>
+    <dd>Java</dd>
+    <dd>Linux</dd>
+    <dd>C</dd>
+
+    <dt>位置</dt>
+    <dd>南京</dd>
+    <dd>成都</dd>
+    <dd>重庆</dd>
+    <dd>上海</dd>
+</dl>
+```
+
+
+
 ## 表格
 
 - 为什么使用表格
   - 简单通用
   - 结构稳定
-
 - 基本结构
   - 单元格
   - 行
@@ -171,12 +326,68 @@ Apply>Ok
   - 跨行
   - 跨列
 
+```html
+<!--表格table
+    行 tr
+    列 td
+-->
+<table border="1px">
+    <tr>
+    <!--colspan 跨列-->
+        <td colspan="3" >1-1</td>
+    </tr>
+    <tr>
+    <!--rowspan 跨行-->
+        <td rowspan="2">2-1</td>
+        <td>2-2</td>
+        <td>2-3</td>
+    </tr>
+    <tr>
+        <td>3-1</td>
+        <td>3-2</td>
+    </tr>
+    <tr>
+        <td rowspan="2">4-1</td>
+        <td>4-2</td>
+        <td>4-3</td>
+    </tr>
+    <tr>
+        <td>5-1</td>
+        <td>5-2</td>
+    </tr>
+</table>
+```
+
 ## 视频和音频
 
 - 视频元素
   - video
 - 音频元素
   - audio
+
+```html
+<!--视频元素
+video:
+    src=“” 资源路径
+    controls 控制开关
+    autoplay 自动播放
+-->
+<video src="path" controls autoplay >
+    <img src="" alt="">
+</video>
+
+<!--音频目录
+audio：
+    src="" 资源路径
+    controls 控制开关
+    autoplay 自动播放
+-->
+<audio src="" controls autoplay >
+
+</audio>
+```
+
+
 
 ## 页面结构分析
 
@@ -249,6 +460,16 @@ Apply>Ok
 可以通过name实现在框架内
 
 \<a herf="" target="_blank.hello">点击跳转\</a>
+
+```html
+<!--内联框架
+    src="" 引用页面地址
+    name="" 框架标识名,有了这个属性,我们就可以根据<a target="_blank.${name}"跳转到该内联>
+    可以通过name实现跳转,类似<a name=""></a>
+-->
+<iframe src="" name="hello" frameborder="0" width="600" height="480"></iframe>
+<a href="1.我的第一个网页.html" target="_blank.hello" >点击跳转</a>
+```
 
 ## 表单语法
 
